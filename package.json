@@ -1,0 +1,21 @@
+{
+  "name": "jur-status-smart-contract",
+  "version": "1.0.0",
+  "description": "This repo will contain the main smart contract for the Jur status.",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jurteam/jur-status-smart-contract.git"
+  },
+  "author": "",
+  "homepage": "https://github.com/jurteam/jur-status-smart-contract#readme",
+  "dependencies": {
+    "ganache-cli": "^6.7.0"
+  }
+}
