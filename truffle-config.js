@@ -1,10 +1,10 @@
 module.exports = {
   networks: {
     development: {
-      host: "localhost",
+      host: 'localhost',
       port: 8545,
       gas: 6721975,
-      network_id: "*" // Match any network id
+      network_id: '*' // Match any network id
     }
   },
   solc: {
@@ -13,4 +13,4 @@ module.exports = {
       runs: 200
     }
   }
-};
+}
