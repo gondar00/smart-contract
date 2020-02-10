@@ -15,13 +15,21 @@ class App extends Component {
 
       // Get the contract instance.
       const networkId = await web3.eth.net.getId();
-      const deployedNetwork = JurStatusContract.networks[networkId];
+      // const deployedNetwork = JurStatusContract.networks[networkId];
       // console.log('deployedNetwork', deployedNetwork)
       // console.log('JurStatusContract', JurStatusContract)
-      const instance = new web3.eth.Contract(
+      var basicOptions = {
+        data: JurStatusContract.bytecode,
+        gasPrice: '1',
+        gas: 4000000
+      };
+
+      const basic = new web3.eth.Contract(
         JurStatusContract.abi,
-        deployedNetwork && deployedNetwork.address,
+        basicOptions
       );
+
+      const instance = await basic.deploy().send({from: accounts[0]})
 
       // Set web3, accounts, and contract to the state, and then proceed with an
       // example of interacting with the contract's methods.
@@ -37,18 +45,19 @@ class App extends Component {
 
   runExample = async () => {
     const { accounts, contract } = this.state;
-    const statusTypes = await contract.methods.addStatusType('solomon').call()
+    // const statusTypes = await contract.methods.addStatusType('solomon').call()
 
     // Get the value from the contract to prove it worked.
     // await contract.methods.new({ from: accounts[0] })
-    await contract.methods.addJurStatus(accounts[0], 1).call()
+    // await contract.methods.addJurStatus(accounts[0], 1).call()
+    const jurStatusCount = await contract.methods.status(accounts[0]).call();
+    // await contract.methods.addJurStatus(accounts[0], 1).call()
 
-    // const response = await contract.methods.addStatusType('status').call();
     // const statusTypes = await contract.methods.addStatusType('type').call();
 
-    // console.log('statusTypes', statusTypes)
+    console.log('jurStatusCount', jurStatusCount)
     // // Update state with the result.
-    // this.setState({ storageValue: statusTypes });
+    // this.setState({ storageValue: response });
   };
 
   render() {

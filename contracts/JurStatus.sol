@@ -20,7 +20,7 @@ contract JurStatus {
     string[] public statusTypes;
 
     /** Mapping between the address of the Jur Status holders and their properties */
-    mapping(address  => Status) public status;
+    mapping(address => Status) public status;
 
     /** Total count of Jur Statuses. */
     uint public statusCount;
