@@ -6,17 +6,13 @@
     "start": "parcel index.html",
     "build": "parcel build index.html"
   },
-  "standard": {
-    "parser": "babel-eslint"
-  },
   "license": "MIT",
   "dependencies": {
+    "@drizzle/react-components": "^1.5.1",
     "@drizzle/react-plugin": "^1.5.1",
     "@drizzle/store": "^1.5.1",
-    "lib": "^4.0.5",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "web3": "^1.2.6"
+    "react-dom": "^16.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
