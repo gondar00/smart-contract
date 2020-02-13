@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { DrizzleProvider } from '@drizzle/react-plugin'
 import { LoadingContainer } from '@drizzle/react-components'
 
-// import './App.css'
+import './app.css'
 
 import drizzleOptions from './drizzle-options'
 import Container from './container'
