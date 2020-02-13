@@ -9,10 +9,10 @@ const options = {
   contracts: [JurStatusContract],
   events: {
     JurStatus: ['StatusTypeAdded', 'StateChanged', 'StatusAdded']
-  },
-  polls: {
-    accounts: 1500
   }
+  // polls: {
+  //   accounts: 1500
+  // }
 }
 
 export default options
