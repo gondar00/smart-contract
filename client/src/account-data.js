@@ -44,7 +44,7 @@ class AccountData extends Component {
 
     return (
       <div className='uk-flex uk-flex-center uk-margin-bottom'>
-      <div className='uk-card uk-card-default uk-card-body uk-width-1-2@m'>
+      <div className='uk-card uk-animation-slide-top uk-card-default uk-card-body uk-width-1-2@m'>
         <h3 className='uk-card-title'>Account</h3>
         <sub>{address}</sub>
         <p>{balance} <a href="#">{units}</a></p>

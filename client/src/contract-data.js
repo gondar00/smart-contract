@@ -34,10 +34,10 @@ class ContractData extends Component {
     }
   }
 
-  getDisplayData (key, value, spinner) {
+  getDisplayData (key, value) {
     return (
-      <tr>
-        <td>{key} {spinner}</td>
+      <tr key={key}>
+        <td>{key}</td>
         <td>{`${value}`}</td>
       </tr>
     )
@@ -64,7 +64,7 @@ class ContractData extends Component {
 
     var pendingSpinner = this.props.contracts[this.props.contract].synced || this.props.hideIndicator
       ? ''
-      : <div uk-spinner />
+      : <div uk-spinner='ratio: 3' />
 
     var displayData = this.props.contracts[this.props.contract][
       this.props.method
@@ -91,7 +91,6 @@ class ContractData extends Component {
         return (
           <li key={index}>
             {`${datum}`}
-            {pendingSpinner}
           </li>
         )
       })
@@ -101,29 +100,30 @@ class ContractData extends Component {
 
     // If retun value is an object
     if (typeof displayData === 'object') {
-      console.log(displayData)
       var i = 0
       const displayObjectProps = []
 
       Object.keys(displayData).forEach(key => {
         if (i != key) {
-          displayObjectProps.push(this.getDisplayData(key, displayData[key], pendingSpinner))
+          displayObjectProps.push(this.getDisplayData(key, displayData[key]))
         }
         i++
       })
 
       return (
-        <table className='uk-table uk-table-small uk-table-divider'>
-          <thead>
-            <tr>
-              <th>Key</th>
-              <th>Value</th>
-            </tr>
-          </thead>
-          <tbody>
-            {displayObjectProps}
-          </tbody>
-        </table>
+        pendingSpinner || (
+          <table className='uk-table uk-table-small uk-table-divider'>
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              {displayObjectProps}
+            </tbody>
+          </table>
+        )
       )
     }
 

@@ -1,5 +1,4 @@
 pragma solidity >=0.5.1 <0.7.0;
-pragma experimental ABIEncoderV2;
 
 contract JurStatus {
     address owner;
@@ -21,7 +20,7 @@ contract JurStatus {
     /** Total count of Jur Statuses. */
     // uint public statusCount;
 
-    event StatusTypeAdded(uint timestamp, string[] statusTypes);
+    event StatusTypeAdded(uint timestamp, string statusType);
     event StateChanged(uint timestamp, address statusHolder, bool newState);
     event StatusAdded(uint timestamp, address statusHolder, string statusType);
 
@@ -32,7 +31,7 @@ contract JurStatus {
 
     constructor()
     public {
-        owner = msg.sender;
+      owner = msg.sender;
     }
 
     /**
@@ -84,6 +83,6 @@ contract JurStatus {
       // require(bytes(_statusType).length == 0, "Status type cannot be an empty string.");
       statusTypes.push(_statusType);
 
-      emit StatusTypeAdded(now, statusTypes);
+      emit StatusTypeAdded(now, _statusType);
     }
 }

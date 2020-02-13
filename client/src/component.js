@@ -15,7 +15,7 @@ export default ({ accounts }) => (
   <div className='app'>
     <AccountData accountIndex={0} precision={3} />
     <div className='uk-flex uk-flex-center' uk-sortable='handle: .uk-card'>
-      <div className='uk-card uk-card-default uk-card-medium  uk-card-body uk-margin-left'>
+      <div className='uk-card uk-card-default uk-card-hover uk-card-medium uk-card-body uk-margin-left uk-animation-slide-bottom'>
         <h5>STATUS</h5>
         <ContractData
           contract={contract}
@@ -23,15 +23,15 @@ export default ({ accounts }) => (
           methodArgs={[accounts[0]]}
         />
       </div>
-      <div className='uk-card uk-card-default uk-card-medium  uk-card-body uk-margin-left'>
+      <div className='uk-card uk-card-default uk-card-hover uk-card-medium uk-card-body uk-margin-left uk-animation-slide-bottom'>
         <h5>ADD - STATUS TYPE</h5>
         <ContractForm contract={contract} method={methods.addStatusType} />
       </div>
-      <div className='uk-card uk-card-default uk-card-medium uk-card-body uk-margin-left'>
+      <div className='uk-card uk-card-default uk-card-hover uk-card-medium uk-card-body uk-margin-left uk-animation-slide-bottom'>
         <h5>ADD - STATUS</h5>
         <ContractForm contract={contract} method={methods.addStatus} />
       </div>
-      <div className='uk-card uk-card-default uk-card-medium uk-card-body uk-margin-left'>
+      <div className='uk-card uk-card-default uk-card-hover uk-card-medium uk-card-body uk-margin-left uk-animation-slide-bottom'>
         <h5>CHANGE - STATE</h5>
         <ContractForm contract={contract} method={methods.changeState} />
       </div>
