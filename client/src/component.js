@@ -1,10 +1,10 @@
 import React from 'react'
 import {
-  ContractData,
   ContractForm
 } from '@drizzle/react-components'
 
 import AccountData from './account-data'
+import ContractData from './contract-data'
 
 const methods = {
   addStatusType: 'addStatusType',
@@ -17,7 +17,11 @@ export default ({ accounts }) => (
     <AccountData accountIndex={0} precision={3} />
     <div className='uk-flex uk-flex-center' uk-sortable='handle: .uk-card'>
       <div className='uk-card uk-card-default uk-card-large  uk-card-body uk-margin-left'>
-        {/* <AccountData accountIndex={0} precision={3} /> */}
+        <ContractData
+          contract='JurStatus'
+          method='status'
+          methodArgs={[accounts[0]]}
+        />
       </div>
       <div className='uk-card uk-card-default uk-card-large  uk-card-body uk-margin-left'>Item 2</div>
       <div className='uk-card uk-card-default uk-card-large  uk-card-body uk-margin-left'>Item 3</div>
