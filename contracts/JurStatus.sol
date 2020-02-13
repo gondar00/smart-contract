@@ -47,11 +47,12 @@ contract JurStatus {
       uint _position
     ) public
     onlyOwner {
-        require(_statusHolder != address(0), "Please provide a valid address.");
-        status[_statusHolder] = Status(now, true, statusTypes[_position]);
-        // statusCount++;
+      require(_statusHolder != address(0), "Please provide a valid address.");
+      require(_position >= statusTypes.length, "Position does not exist.");
+      status[_statusHolder] = Status(now, true, statusTypes[_position]);
+      // statusCount++;
 
-        emit StatusAdded(now, _statusHolder, statusTypes[_position]);
+      emit StatusAdded(now, _statusHolder, statusTypes[_position]);
     }
 
     /**
@@ -64,12 +65,12 @@ contract JurStatus {
       bool _newState
     ) public
     onlyOwner {
-        require(_statusHolder != address(0), "Please provide a valid address.");
-        // require(status[_statusHolder].timestamp != 0, "Address is not a Jur Status holder.");
-        require(status[_statusHolder].active != _newState, "Already in the same state.");
-        status[_statusHolder].active = _newState;
+      require(_statusHolder != address(0), "Please provide a valid address.");
+      // require(status[_statusHolder].timestamp != 0, "Address is not a Jur Status holder.");
+      require(status[_statusHolder].active != _newState, "Already in the same state.");
+      status[_statusHolder].active = _newState;
 
-        emit StateChanged(now, _statusHolder, _newState);
+      emit StateChanged(now, _statusHolder, _newState);
     }
 
     /**
@@ -80,9 +81,9 @@ contract JurStatus {
       string memory _statusType
     ) public
     onlyOwner {
-        // require(bytes(_statusType).length == 0, "Status type cannot be an empty string.");
-        statusTypes.push(_statusType);
+      // require(bytes(_statusType).length == 0, "Status type cannot be an empty string.");
+      statusTypes.push(_statusType);
 
-        emit StatusTypeAdded(now, statusTypes);
+      emit StatusTypeAdded(now, statusTypes);
     }
 }
