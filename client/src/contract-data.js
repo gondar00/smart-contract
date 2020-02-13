@@ -38,7 +38,7 @@ class ContractData extends Component {
     return (
       <tr>
         <td>{key} {spinner}</td>
-        <td>{`${value || '-'}`}</td>
+        <td>{`${value}`}</td>
       </tr>
     )
   }
@@ -113,8 +113,7 @@ class ContractData extends Component {
       })
 
       return (
-        <table class='uk-table uk-table-small uk-table-divider'>
-          <caption className='uk-margin-bottom'>STATUS</caption>
+        <table className='uk-table uk-table-small uk-table-divider'>
           <thead>
             <tr>
               <th>Key</th>
