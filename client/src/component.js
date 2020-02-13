@@ -12,7 +12,7 @@ const methods = {
 }
 
 export default ({ accounts }) => (
-  <div className='App'>
+  <div className='app'>
     <div className='section'>
       <h2>Active account</h2>
       <AccountData accountIndex={0} precision={3} />
