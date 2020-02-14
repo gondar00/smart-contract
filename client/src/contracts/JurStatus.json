@@ -4869,15 +4869,40 @@
           ],
           "name": "StatusTypeAdded",
           "type": "event"
+        },
+        "0x0af3dd419e90f284ca5ea8e586dd1a1c8d08495848e351ed021012bc803dc2ab": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "internalType": "uint256",
+              "name": "timestamp",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "internalType": "address",
+              "name": "statusHolder",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "internalType": "string[]",
+              "name": "statusType",
+              "type": "string[]"
+            }
+          ],
+          "name": "StatusAdded",
+          "type": "event"
         }
       },
       "links": {},
-      "address": "0x0c213E5B42c58f7Eb2f09B99Ff1e622bbD7A03dA",
-      "transactionHash": "0x47d694f7db8ae73fd2d3193149f1e61e84bd21d3e9427d126fb6ed013af5b2a8"
+      "address": "0x60c0fdA08D02e81B7A79663c555069Ca3Af90788",
+      "transactionHash": "0xaa460401bcd55ae4943eded57e68887719714268d1b363373fc4224e173030ea"
     }
   },
   "schemaVersion": "3.0.23",
-  "updatedAt": "2020-02-13T20:04:57.903Z",
+  "updatedAt": "2020-02-14T15:03:09.363Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {

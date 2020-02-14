@@ -88,27 +88,39 @@ class ContractForm extends Component {
     }
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className='uk-form-stacked' onSubmit={this.handleSubmit}>
         <fieldset className='uk-fieldset'>
-          {/* <h4>Add - status type</h4> */}
           {this.inputs.map((input, index) => {
             var inputType = translateType(input.type)
             var inputLabel = this.props.labels
               ? this.props.labels[index]
               : input.name
             return (
-              <input
-                key={input.name}
-                className={inputType === 'checkbox' ? 'uk-margin-bottom uk-display-block uk-checkbox' : 'uk-margin-bottom uk-input'}
-                type={inputType}
-                name={input.name}
-                value={this.state[input.name]}
-                placeholder={inputLabel}
-                onChange={this.handleInputChange}
-              />
+              <div key={input.name} className='uk-margin'>
+                <label className='uk-form-label' htmlFor='form-stacked-text'>{inputLabel}</label>
+                <div className='uk-form-controls'>
+                  {inputType === 'checkbox' ? (
+                    <input
+                      name={input.name}
+                      onChange={this.handleInputChange}
+                      className='uk-checkbox'
+                      type={inputType}
+                    />
+                  ) : (
+                    <input
+                      name={input.name}
+                      value={this.state[input.name]}
+                      onChange={this.handleInputChange}
+                      className='uk-input'
+                      type={inputType}
+                      placeholder={input.name}
+                    />
+                  )}
+                </div>
+              </div>
             )
           })}
-          <button key='submit' type='button' className='uk-margin-top uk-button uk-button-default' onClick={this.handleSubmit}>
+          <button key='submit' type='button' className='uk-margin-top uk-margin-left uk-margin-bottom uk-position-bottom uk-button uk-button-default' onClick={this.handleSubmit}>
             Add
           </button>
         </fieldset>

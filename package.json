@@ -16,6 +16,10 @@
   "author": "",
   "homepage": "https://github.com/jurteam/jur-status-smart-contract#readme",
   "dependencies": {
-    "ganache-cli": "^6.7.0"
+    "ganache-cli": "^6.7.0",
+    "react-toastify": "^5.5.0"
+  },
+  "devDependencies": {
+    "babel-preset-latest": "^6.24.1"
   }
 }

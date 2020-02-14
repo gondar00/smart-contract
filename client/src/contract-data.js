@@ -64,7 +64,7 @@ class ContractData extends Component {
 
     var pendingSpinner = this.props.contracts[this.props.contract].synced || this.props.hideIndicator
       ? ''
-      : <div uk-spinner='ratio: 3' />
+      : <div className='uk-margin-large-left uk-margin-large-top' uk-spinner='ratio: 2' />
 
     var displayData = this.props.contracts[this.props.contract][
       this.props.method
