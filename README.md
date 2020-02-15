@@ -17,3 +17,5 @@
 - https://github.com/cgewecke/web3.js/blob/e9f6cfa0e2b92ded3e817d4777fae6e495058ca1/test/e2e.method.call.js
 - https://github.com/ConsenSys/smart-contract-best-practices :star:
 - https://www.trufflesuite.com/tutorials/drizzle-and-contract-events
+- https://learnxinyminutes.com/
+- https://soliditycookbook.com/

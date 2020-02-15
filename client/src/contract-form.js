@@ -37,7 +37,7 @@ class ContractForm extends Component {
         this.inputs = abi[i].inputs
 
         for (var j = 0; j < this.inputs.length; j++) {
-          initialState[this.inputs[j].name] = ''
+          initialState[this.inputs[j].name] = this.inputs[j].type === 'bool' ? false : ''
         }
 
         break
@@ -49,6 +49,18 @@ class ContractForm extends Component {
 
   handleSubmit (event) {
     event.preventDefault()
+
+    const inputs = this.inputs.map(input => this.state[input.name])
+
+    const empty = (element) => typeof element === 'string' && element.trim() === ''
+
+    if (inputs.some(empty)) {
+      this.setState({
+        pristine: true
+      })
+
+      return
+    }
 
     const convertedInputs = this.inputs.map(input => {
       if (input.type === 'bytes32') {
@@ -73,7 +85,7 @@ class ContractForm extends Component {
       event.target.type === 'checkbox'
         ? event.target.checked
         : event.target.value
-    this.setState({ [event.target.name]: value })
+    this.setState({ [event.target.name]: value, pristine: false })
   }
 
   render () {
@@ -95,6 +107,7 @@ class ContractForm extends Component {
             var inputLabel = this.props.labels
               ? this.props.labels[index]
               : input.name
+
             return (
               <div key={input.name} className='uk-margin'>
                 <label className='uk-form-label' htmlFor='form-stacked-text'>{inputLabel}</label>
@@ -105,13 +118,14 @@ class ContractForm extends Component {
                       onChange={this.handleInputChange}
                       className='uk-checkbox'
                       type={inputType}
+                      // checked={this.state[input.name]}
                     />
                   ) : (
                     <input
                       name={input.name}
                       value={this.state[input.name]}
                       onChange={this.handleInputChange}
-                      className='uk-input'
+                      className={`${this.state.pristine ? 'uk-form-danger' : ''} uk-input`}
                       type={inputType}
                       placeholder={input.name}
                     />

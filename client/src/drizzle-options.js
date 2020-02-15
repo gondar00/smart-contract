@@ -8,7 +8,7 @@ const options = {
   },
   contracts: [JurStatusContract],
   events: {
-    JurStatus: ['StatusTypeAdded', 'StateChanged', 'StatusAdded']
+    JurStatus: ['TriggerStatusTypeAdded', 'TriggerStateChanged', 'TriggerStatusAdded']
   }
   // polls: {
   //   accounts: 1500

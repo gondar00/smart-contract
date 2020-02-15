@@ -5,8 +5,8 @@ const contractEventNotifier = store => next => action => {
   if (action.type === EventActions.EVENT_FIRED) {
     const contract = action.name
     const contractEvent = action.event.event
-    const message = action.event.returnValues._message
-    const display = `${contract}(${contractEvent}): ${message}`
+    const message = action.event.returnValues.notification
+    const display = `<div><div>${contract} - ${contractEvent}</div><div class="uk-label uk-label-success"><span uk-icon='icon: check'></span>${message}</div></div>`
 
     window.UIkit.notification(display)
   }

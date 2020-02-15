@@ -8,8 +8,8 @@ module.exports = {
     develop: {
       port: 8545,
       network_id: '*',
-      gas: 10000000,
-      gasLimit: 10000000
+      gas: 1000000000,
+      gasLimit: 100000000
     }
   },
   solc: {
