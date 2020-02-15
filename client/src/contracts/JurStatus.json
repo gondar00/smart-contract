@@ -5326,12 +5326,12 @@
         }
       },
       "links": {},
-      "address": "0xecc0f92DD0DeA9f3f78F98834cc4ff84C8FCE96F",
-      "transactionHash": "0x324cb157bfdb7eec088d2504194d4a99db3b834249594e978596bdf6e4eb15ae"
+      "address": "0x1399b3e80E56126b68a1BAb1Ffd7991F76E9b12D",
+      "transactionHash": "0x96d67b8acd6db4b64eb76745d84ccda751af9efe903ffb64332ec871dcc72826"
     }
   },
   "schemaVersion": "3.0.23",
-  "updatedAt": "2020-02-15T12:33:44.650Z",
+  "updatedAt": "2020-02-15T12:53:12.242Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
