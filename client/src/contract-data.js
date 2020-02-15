@@ -38,7 +38,7 @@ class ContractData extends Component {
     return (
       <tr key={key}>
         <td>{key}</td>
-        <td>{`${value}`}</td>
+        <td>{`${key === 'statusType' ? this.context.drizzle.web3.utils.hexToAscii(value) : value}`}</td>
       </tr>
     )
   }

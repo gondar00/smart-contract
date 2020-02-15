@@ -68,7 +68,7 @@ contract JurStatus {
       bytes32 _statusType // @param _statusType - The new status type.
     ) public
     onlyOwner {
-      require(_statusType.length == 0, "Status type cannot be an empty string.");
+      // require(_statusType.length == 0, "Status type cannot be an empty string.");
 
       // `Type({...})` creates a temporary
       // Type object and `statusTypes.push(...)`
